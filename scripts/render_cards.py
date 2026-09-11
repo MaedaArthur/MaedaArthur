@@ -71,6 +71,8 @@ query($login: String!, $after: String) {
     contributionsCollection {
       totalCommitContributions
       totalPullRequestReviewContributions
+      restrictedContributionsCount
+      hasAnyRestrictedContributions
       contributionCalendar {
         totalContributions
         weeks {
@@ -168,6 +170,19 @@ def card_open(width, height, title):
     )
 
 
+
+def inclui_privado(user):
+    """A API so reporta contribuicao privada se o perfil estiver configurado
+    para isso ("Include private contributions on my profile"). Sem essa chave,
+    nenhum token enxerga -- entao os numeros sao so da atividade publica e o
+    card precisa dizer isso, em vez de passar por total."""
+    return bool(user["contributionsCollection"].get("hasAnyRestrictedContributions"))
+
+
+def escopo(user):
+    return "" if inclui_privado(user) else "public "
+
+
 def stats_card(user, out):
     contrib = user["contributionsCollection"]
     stars = sum(r["stargazerCount"] for r in user["_repos"])
@@ -194,8 +209,8 @@ def stats_card(user, out):
             % (y, THEME["icon"], ICONS[icon], esc(label), width - 50, fmt(value))
         )
     svg.append(
-        '  <text x="25" y="%d" class="muted">%s contributions in the last year</text>\n'
-        % (height - 14, fmt(contrib["contributionCalendar"]["totalContributions"]))
+        '  <text x="25" y="%d" class="muted">%s %scontributions in the last year</text>\n'
+        % (height - 14, fmt(contrib["contributionCalendar"]["totalContributions"]), escopo(user))
     )
     svg.append("</svg>\n")
     write(out, "".join(svg))
@@ -266,9 +281,9 @@ def calendar_card(user, out):
     width = left + len(weeks) * (cell + gap) + 22
     height = top + 7 * (cell + gap) + 30
 
-    svg = [card_open(width, height, "Contributions in the last year")]
-    svg.append('  <text x="%d" y="35" class="muted" text-anchor="end">%s contributions</text>\n'
-               % (width - 25, fmt(cal["totalContributions"])))
+    svg = [card_open(width, height, "%sContributions in the last year" % escopo(user).title())]
+    svg.append('  <text x="%d" y="35" class="muted" text-anchor="end">%s %scontributions</text>\n'
+               % (width - 25, fmt(cal["totalContributions"]), escopo(user)))
 
     for i, label in enumerate(["Mon", "Wed", "Fri"]):
         y = top + (1 + i * 2) * (cell + gap) + cell - 1
@@ -403,7 +418,7 @@ def streak_card(user, out):
            % (width, height, width, height, width - 1, height - 1, THEME["bg"], THEME["border"])]
 
     colunas = [
-        ("%s" % fmt(total), "Contributions this year", periodo(days[0]["date"] if days else None,
+        ("%s" % fmt(total), "%sContributions" % escopo(user).title(), periodo(days[0]["date"] if days else None,
                                                             days[-1]["date"] if days else None)),
         ("%s" % fmt(atual["tamanho"]), "Current streak", periodo(atual["inicio"], atual["fim"])),
         ("%s" % fmt(melhor["tamanho"]), "Longest streak", periodo(melhor["inicio"], melhor["fim"])),
