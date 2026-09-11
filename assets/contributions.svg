@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="806" height="198" viewBox="0 0 806 198" fill="none" role="img" aria-label="Contribuições no último ano">
+<svg xmlns="http://www.w3.org/2000/svg" width="806" height="198" viewBox="0 0 806 198" fill="none" role="img" aria-label="Contributions in the last year">
   <rect x="0.5" y="0.5" width="805" height="197" rx="6" fill="#141321" stroke="#2b2640"/>
-  <text x="25" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" fill="#fe428e" font-size="18">Contribuições no último ano</text>
-  <text x="781" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="12" text-anchor="end">239 contribuições</text>
-  <text x="25" y="94" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">seg</text>
-  <text x="25" y="122" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">qua</text>
-  <text x="25" y="150" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">sex</text>
-  <text x="42" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">set</text>
+  <text x="25" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" fill="#fe428e" font-size="18">Contributions in the last year</text>
+  <text x="781" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="12" text-anchor="end">239 contributions</text>
+  <text x="25" y="94" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">Mon</text>
+  <text x="25" y="122" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">Wed</text>
+  <text x="25" y="150" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">Fri</text>
+  <text x="42" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Sep</text>
   <rect x="42" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2025-09-07: 0</title></rect>
   <rect x="42" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2025-09-08: 0</title></rect>
   <rect x="42" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2025-09-09: 0</title></rect>
@@ -34,7 +34,7 @@
   <rect x="84" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-02: 0</title></rect>
   <rect x="84" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-03: 0</title></rect>
   <rect x="84" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-04: 0</title></rect>
-  <text x="98" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">out</text>
+  <text x="98" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Oct</text>
   <rect x="98" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-05: 0</title></rect>
   <rect x="98" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-06: 0</title></rect>
   <rect x="98" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-07: 0</title></rect>
@@ -63,7 +63,7 @@
   <rect x="140" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-30: 0</title></rect>
   <rect x="140" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2025-10-31: 0</title></rect>
   <rect x="140" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2025-11-01: 0</title></rect>
-  <text x="154" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">nov</text>
+  <text x="154" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Nov</text>
   <rect x="154" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2025-11-02: 0</title></rect>
   <rect x="154" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2025-11-03: 0</title></rect>
   <rect x="154" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2025-11-04: 0</title></rect>
@@ -99,7 +99,7 @@
   <rect x="210" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2025-12-04: 0</title></rect>
   <rect x="210" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2025-12-05: 0</title></rect>
   <rect x="210" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2025-12-06: 0</title></rect>
-  <text x="224" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">dez</text>
+  <text x="224" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Dec</text>
   <rect x="224" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2025-12-07: 0</title></rect>
   <rect x="224" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2025-12-08: 0</title></rect>
   <rect x="224" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2025-12-09: 0</title></rect>
@@ -128,7 +128,7 @@
   <rect x="266" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-01: 0</title></rect>
   <rect x="266" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-02: 0</title></rect>
   <rect x="266" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-03: 0</title></rect>
-  <text x="280" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">jan</text>
+  <text x="280" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Jan</text>
   <rect x="280" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-04: 0</title></rect>
   <rect x="280" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-05: 0</title></rect>
   <rect x="280" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-06: 0</title></rect>
@@ -157,7 +157,7 @@
   <rect x="322" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-29: 0</title></rect>
   <rect x="322" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-30: 0</title></rect>
   <rect x="322" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-01-31: 0</title></rect>
-  <text x="336" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">fev</text>
+  <text x="336" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Feb</text>
   <rect x="336" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-02-01: 0</title></rect>
   <rect x="336" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-02-02: 0</title></rect>
   <rect x="336" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-02-03: 0</title></rect>
@@ -186,7 +186,7 @@
   <rect x="378" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-02-26: 0</title></rect>
   <rect x="378" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-02-27: 0</title></rect>
   <rect x="378" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-02-28: 0</title></rect>
-  <text x="392" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">mar</text>
+  <text x="392" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Mar</text>
   <rect x="392" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-03-01: 0</title></rect>
   <rect x="392" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-03-02: 0</title></rect>
   <rect x="392" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-03-03: 0</title></rect>
@@ -207,7 +207,7 @@
   <rect x="420" y="112" width="11" height="11" rx="2" fill="#201c30"><title>2026-03-18: 0</title></rect>
   <rect x="420" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-03-19: 0</title></rect>
   <rect x="420" y="140" width="11" height="11" rx="2" fill="#5c2246"><title>2026-03-20: 5</title></rect>
-  <rect x="420" y="154" width="11" height="11" rx="2" fill="#fe428e"><title>2026-03-21: 23</title></rect>
+  <rect x="420" y="154" width="11" height="11" rx="2" fill="#d13b7f"><title>2026-03-21: 23</title></rect>
   <rect x="434" y="70" width="11" height="11" rx="2" fill="#5c2246"><title>2026-03-22: 1</title></rect>
   <rect x="434" y="84" width="11" height="11" rx="2" fill="#5c2246"><title>2026-03-23: 3</title></rect>
   <rect x="434" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-03-24: 0</title></rect>
@@ -220,9 +220,9 @@
   <rect x="448" y="98" width="11" height="11" rx="2" fill="#5c2246"><title>2026-03-31: 1</title></rect>
   <rect x="448" y="112" width="11" height="11" rx="2" fill="#5c2246"><title>2026-04-01: 4</title></rect>
   <rect x="448" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-02: 0</title></rect>
-  <rect x="448" y="140" width="11" height="11" rx="2" fill="#962f63"><title>2026-04-03: 9</title></rect>
+  <rect x="448" y="140" width="11" height="11" rx="2" fill="#5c2246"><title>2026-04-03: 9</title></rect>
   <rect x="448" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-04: 0</title></rect>
-  <text x="462" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">abr</text>
+  <text x="462" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Apr</text>
   <rect x="462" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-05: 0</title></rect>
   <rect x="462" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-06: 0</title></rect>
   <rect x="462" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-07: 0</title></rect>
@@ -230,8 +230,8 @@
   <rect x="462" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-09: 0</title></rect>
   <rect x="462" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-10: 0</title></rect>
   <rect x="462" y="154" width="11" height="11" rx="2" fill="#fe428e"><title>2026-04-11: 32</title></rect>
-  <rect x="476" y="70" width="11" height="11" rx="2" fill="#fe428e"><title>2026-04-12: 41</title></rect>
-  <rect x="476" y="84" width="11" height="11" rx="2" fill="#fe428e"><title>2026-04-13: 22</title></rect>
+  <rect x="476" y="70" width="11" height="11" rx="2" fill="#fe428e"><title>2026-04-12: 42</title></rect>
+  <rect x="476" y="84" width="11" height="11" rx="2" fill="#d13b7f"><title>2026-04-13: 21</title></rect>
   <rect x="476" y="98" width="11" height="11" rx="2" fill="#fe428e"><title>2026-04-14: 41</title></rect>
   <rect x="476" y="112" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-15: 0</title></rect>
   <rect x="476" y="126" width="11" height="11" rx="2" fill="#5c2246"><title>2026-04-16: 1</title></rect>
@@ -251,7 +251,7 @@
   <rect x="504" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-04-30: 0</title></rect>
   <rect x="504" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-01: 0</title></rect>
   <rect x="504" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-02: 0</title></rect>
-  <text x="518" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">mai</text>
+  <text x="518" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">May</text>
   <rect x="518" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-03: 0</title></rect>
   <rect x="518" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-04: 0</title></rect>
   <rect x="518" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-05: 0</title></rect>
@@ -259,7 +259,7 @@
   <rect x="518" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-07: 0</title></rect>
   <rect x="518" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-08: 0</title></rect>
   <rect x="518" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-09: 0</title></rect>
-  <rect x="532" y="70" width="11" height="11" rx="2" fill="#fe428e"><title>2026-05-10: 24</title></rect>
+  <rect x="532" y="70" width="11" height="11" rx="2" fill="#d13b7f"><title>2026-05-10: 24</title></rect>
   <rect x="532" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-11: 0</title></rect>
   <rect x="532" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-12: 0</title></rect>
   <rect x="532" y="112" width="11" height="11" rx="2" fill="#201c30"><title>2026-05-13: 0</title></rect>
@@ -287,7 +287,7 @@
   <rect x="574" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-06-04: 0</title></rect>
   <rect x="574" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-06-05: 0</title></rect>
   <rect x="574" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-06-06: 0</title></rect>
-  <text x="588" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">jun</text>
+  <text x="588" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Jun</text>
   <rect x="588" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-06-07: 0</title></rect>
   <rect x="588" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-06-08: 0</title></rect>
   <rect x="588" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-06-09: 0</title></rect>
@@ -316,7 +316,7 @@
   <rect x="630" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-02: 0</title></rect>
   <rect x="630" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-03: 0</title></rect>
   <rect x="630" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-04: 0</title></rect>
-  <text x="644" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">jul</text>
+  <text x="644" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Jul</text>
   <rect x="644" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-05: 0</title></rect>
   <rect x="644" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-06: 0</title></rect>
   <rect x="644" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-07: 0</title></rect>
@@ -345,7 +345,7 @@
   <rect x="686" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-30: 0</title></rect>
   <rect x="686" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-07-31: 0</title></rect>
   <rect x="686" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-08-01: 0</title></rect>
-  <text x="700" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">ago</text>
+  <text x="700" y="62" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">Aug</text>
   <rect x="700" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-08-02: 0</title></rect>
   <rect x="700" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-08-03: 0</title></rect>
   <rect x="700" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-08-04: 0</title></rect>
@@ -387,11 +387,11 @@
   <rect x="770" y="112" width="11" height="11" rx="2" fill="#201c30"><title>2026-09-09: 0</title></rect>
   <rect x="770" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-09-10: 0</title></rect>
   <rect x="770" y="140" width="11" height="11" rx="2" fill="#5c2246"><title>2026-09-11: 5</title></rect>
-  <text x="629" y="182" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">menos</text>
+  <text x="629" y="182" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">less</text>
   <rect x="675" y="173" width="11" height="11" rx="2" fill="#201c30"/>
   <rect x="689" y="173" width="11" height="11" rx="2" fill="#5c2246"/>
   <rect x="703" y="173" width="11" height="11" rx="2" fill="#962f63"/>
   <rect x="717" y="173" width="11" height="11" rx="2" fill="#d13b7f"/>
   <rect x="731" y="173" width="11" height="11" rx="2" fill="#fe428e"/>
-  <text x="753" y="182" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">mais</text>
+  <text x="753" y="182" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">more</text>
 </svg>

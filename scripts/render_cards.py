@@ -140,7 +140,7 @@ def fetch(token, login):
 
 
 def fmt(n):
-    return "{:,}".format(n).replace(",", ".")
+    return "{:,}".format(n)
 
 
 def esc(text):
@@ -172,16 +172,16 @@ def stats_card(user, out):
     contrib = user["contributionsCollection"]
     stars = sum(r["stargazerCount"] for r in user["_repos"])
     rows = [
-        ("star", "Total de estrelas", stars),
-        ("commit", "Commits (último ano)", contrib["totalCommitContributions"]),
+        ("star", "Total stars earned", stars),
+        ("commit", "Commits (last year)", contrib["totalCommitContributions"]),
         ("pr", "Pull requests", user["pullRequests"]["totalCount"]),
         ("issue", "Issues", user["issues"]["totalCount"]),
-        ("fork", "Contribuiu em", user["repositoriesContributedTo"]["totalCount"]),
+        ("fork", "Contributed to", user["repositoriesContributedTo"]["totalCount"]),
     ]
     width, top, step = 460, 70, 27
     height = top + step * len(rows) + 22
 
-    svg = [card_open(width, height, "Estatísticas do GitHub")]
+    svg = [card_open(width, height, "GitHub Stats")]
     for i, (icon, label, value) in enumerate(rows):
         y = top + i * step
         svg.append(
@@ -194,7 +194,7 @@ def stats_card(user, out):
             % (y, THEME["icon"], ICONS[icon], esc(label), width - 50, fmt(value))
         )
     svg.append(
-        '  <text x="25" y="%d" class="muted">%s contribuições no último ano</text>\n'
+        '  <text x="25" y="%d" class="muted">%s contributions in the last year</text>\n'
         % (height - 14, fmt(contrib["contributionCalendar"]["totalContributions"]))
     )
     svg.append("</svg>\n")
@@ -219,10 +219,10 @@ def langs_card(user, out):
     top, colors, grand = language_totals(user["_repos"])
     rows = (len(top) + 1) // 2
     width, height = 340, 92 + rows * 26 - 4
-    svg = [card_open(width, height, "Linguagens mais usadas")]
+    svg = [card_open(width, height, "Most used languages")]
 
     if not grand:
-        svg.append('  <text x="25" y="70" class="label">Sem dados de linguagem ainda</text>\n</svg>\n')
+        svg.append('  <text x="25" y="70" class="label">No language data yet</text>\n</svg>\n')
         write(out, "".join(svg))
         return
 
@@ -255,7 +255,7 @@ def langs_card(user, out):
     write(out, "".join(svg))
 
 
-MONTHS = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
 def calendar_card(user, out):
@@ -266,11 +266,11 @@ def calendar_card(user, out):
     width = left + len(weeks) * (cell + gap) + 22
     height = top + 7 * (cell + gap) + 30
 
-    svg = [card_open(width, height, "Contribuições no último ano")]
-    svg.append('  <text x="%d" y="35" class="muted" text-anchor="end">%s contribuições</text>\n'
+    svg = [card_open(width, height, "Contributions in the last year")]
+    svg.append('  <text x="%d" y="35" class="muted" text-anchor="end">%s contributions</text>\n'
                % (width - 25, fmt(cal["totalContributions"])))
 
-    for i, label in enumerate(["seg", "qua", "sex"]):
+    for i, label in enumerate(["Mon", "Wed", "Fri"]):
         y = top + (1 + i * 2) * (cell + gap) + cell - 1
         svg.append('  <text x="25" y="%d" class="tiny" text-anchor="end">%s</text>\n' % (y, label))
 
@@ -291,11 +291,11 @@ def calendar_card(user, out):
 
     legend_x = width - 25 - (5 * (cell + gap) + 82)
     legend_y = height - 16
-    svg.append('  <text x="%d" y="%d" class="tiny">menos</text>\n' % (legend_x, legend_y))
+    svg.append('  <text x="%d" y="%d" class="tiny">less</text>\n' % (legend_x, legend_y))
     for i, key in enumerate(LEVEL_ORDER):
         svg.append('  <rect x="%d" y="%d" width="%d" height="%d" rx="2" fill="%s"/>\n'
                    % (legend_x + 46 + i * (cell + gap), legend_y - 9, cell, cell, LEVELS[key]))
-    svg.append('  <text x="%d" y="%d" class="tiny">mais</text>\n'
+    svg.append('  <text x="%d" y="%d" class="tiny">more</text>\n'
                % (legend_x + 46 + 5 * (cell + gap) + 8, legend_y))
     svg.append("</svg>\n")
     write(out, "".join(svg))
@@ -365,8 +365,8 @@ def streaks(days):
     return atual, melhor
 
 
-MESES_CURTOS = ["jan", "fev", "mar", "abr", "mai", "jun",
-                "jul", "ago", "set", "out", "nov", "dez"]
+MESES_CURTOS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
 def data_curta(iso, com_ano=True):
@@ -398,15 +398,15 @@ def streak_card(user, out):
     width, height = 495, 195
     col = width / 3.0
     svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" '
-           'viewBox="0 0 %d %d" fill="none" role="img" aria-label="Sequência de contribuições">\n'
+           'viewBox="0 0 %d %d" fill="none" role="img" aria-label="Contribution streak">\n'
            '  <rect x="0.5" y="0.5" width="%d" height="%d" rx="6" fill="%s" stroke="%s"/>\n'
            % (width, height, width, height, width - 1, height - 1, THEME["bg"], THEME["border"])]
 
     colunas = [
-        ("%s" % fmt(total), "Contribuições no ano", periodo(days[0]["date"] if days else None,
+        ("%s" % fmt(total), "Contributions this year", periodo(days[0]["date"] if days else None,
                                                             days[-1]["date"] if days else None)),
-        ("%s" % fmt(atual["tamanho"]), "Sequência atual", periodo(atual["inicio"], atual["fim"])),
-        ("%s" % fmt(melhor["tamanho"]), "Maior sequência", periodo(melhor["inicio"], melhor["fim"])),
+        ("%s" % fmt(atual["tamanho"]), "Current streak", periodo(atual["inicio"], atual["fim"])),
+        ("%s" % fmt(melhor["tamanho"]), "Longest streak", periodo(melhor["inicio"], melhor["fim"])),
     ]
 
     for i, (numero, rotulo, faixa) in enumerate(colunas):
@@ -430,7 +430,7 @@ def streak_card(user, out):
         svg.append('  <line x1="%.1f" y1="40" x2="%.1f" y2="155" stroke="%s" stroke-width="1"/>\n'
                    % (x, x, THEME["border"]))
     svg.append('  <text x="%d" y="178" text-anchor="middle" font-family="%s" font-weight="400" '
-               'font-size="10" fill="%s">sequências contadas nos últimos 12 meses</text>\n'
+               'font-size="10" fill="%s">streaks counted within the last 12 months</text>\n'
                % (width // 2, FONT, THEME["muted"]))
     svg.append("</svg>\n")
     write(out, "".join(svg))
