@@ -1,10 +1,10 @@
 # 👋 Hi, I'm Arthur Maeda (MaedaArthur)
 
-**Customer Success coordinator at [VendeAI](https://github.com/VendeAI)** from Florianópolis 🇧🇷 — I build
+**Customer Success Coordinator at [VendeAI](https://github.com/VendeAI)** from Florianópolis 🇧🇷 — I build
 AI agents, support automation and internal tooling for the Brazilian payroll-deductible
 credit market.
 
-🎓 BSc Electrical Engineering at **UFSC** · 🛠️ Contributing to **[PET EEL UFSC](https://github.com/PET-EEL-UFSC)**
+🎓 BSc Electrical Engineering at **UFSC** · 👨‍🏫 Teaching Assistant in Electronics · 🛠️ Contributing to **[PET EEL UFSC](https://github.com/PET-EEL-UFSC)**
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=MaedaArthur&label=Profile%20views&color=fe428e&style=flat" alt="Profile views" />
@@ -27,9 +27,24 @@ credit market.
 
 ## 🚀 Projects
 
-- **[walkthrough-skill](https://github.com/MaedaArthur/walkthrough-skill)** — open-source (MIT) tool on the Claude Code plugin marketplace that walks a reader through an unfamiliar codebase, inferring their level and gating on comprehension checkpoints.
-- **[ConnectAI](https://github.com/PET-EEL-UFSC/connectai)** — three-stage LangGraph pipeline that generates complete hackathon cases, with deliberate inconsistencies calibrated by difficulty.
-- **[Saiba sua Nota](https://github.com/PET-EEL-UFSC/saiba-sua-nota)** — FFT pitch detection over 48 kHz audio, as a desktop build and a Raspberry Pi station with I2C display and GPIO feedback.
+- **[Asmodeus](https://github.com/MaedaArthur/asmodeus)** — agent-orchestration framework for running several work fronts at once: one TypeScript engine on the Claude Agent SDK, driven from a CLI, an Ink terminal UI and an Electron app. Its core is a layered permission gate — every shell command is classified read-versus-write before running, and writes park in a durable queue that survives process death.
+- **[walkthrough-skill](https://github.com/MaedaArthur/walkthrough-skill)** — open-source (MIT) tool on the Claude Code plugin marketplace. It walks a reader through an unfamiliar codebase, infers their level from their vocabulary and only moves on after comprehension checkpoints.
+- **[ConnectAI](https://github.com/PET-EEL-UFSC/connectai)** — three-stage LangGraph pipeline that generates hackathon cases (narrative, structured JSON per artefact and the actual xlsx, docx, pdf and pptx files) with deliberate inconsistencies calibrated by difficulty.
+
+## 🧰 Stack
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/C%2FC%2B%2B-00599C?logo=cplusplus&logoColor=white" alt="C/C++" />
+  <img src="https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?logo=langchain&logoColor=white" alt="LangGraph" />
+  <img src="https://img.shields.io/badge/MCP-000000?logo=anthropic&logoColor=white" alt="MCP" />
+</p>
 
 ## 🌐 Connect
 
