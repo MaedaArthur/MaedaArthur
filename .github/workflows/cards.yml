@@ -30,8 +30,12 @@ jobs:
 
       - name: Gera os SVGs
         env:
-          # CARDS_PAT e opcional: so vale a pena se voce quiser contar
-          # contribuicoes privadas. Sem ele, usa o token do proprio job.
+          # Sem secret, usa o token do proprio job, que so enxerga dado
+          # publico -- e o mesmo recorte que qualquer visitante do perfil ve.
+          #
+          # Para contar tambem repositorios privados, crie um secret chamado
+          # CARDS_PAT com um PAT de escopo `repo`. Repare que isso guarda uma
+          # credencial de leitura dos seus repos privados num repo publico.
           GITHUB_TOKEN: ${{ secrets.CARDS_PAT || secrets.GITHUB_TOKEN }}
         run: python3 scripts/render_cards.py ${{ github.repository_owner }}
 
