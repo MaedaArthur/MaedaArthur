@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="166" viewBox="0 0 340 166" fill="none" role="img" aria-label="Linguagens mais usadas">
+  <rect x="0.5" y="0.5" width="339" height="165" rx="6" fill="#1a1b27" stroke="#2a2e45"/>
+  <text x="25" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" fill="#70a5fd" font-size="18">Linguagens mais usadas</text>
+  <mask id="bar"><rect x="25" y="55" width="290" height="8" rx="4" fill="#fff"/></mask>
+  <g mask="url(#bar)">
+    <rect x="25.00" y="55" width="279.57" height="8" fill="#3178c6"/>
+    <rect x="304.07" y="55" width="5.24" height="8" fill="#663399"/>
+    <rect x="308.80" y="55" width="3.64" height="8" fill="#f1e05a"/>
+    <rect x="311.94" y="55" width="2.81" height="8" fill="#89e051"/>
+    <rect x="314.25" y="55" width="1.01" height="8" fill="#336790"/>
+    <rect x="314.76" y="55" width="0.74" height="8" fill="#e34c26"/>
+  </g>
+  <g transform="translate(25.0 92)">
+    <circle cx="5" cy="-4" r="5" fill="#3178c6"/>
+    <text x="16" y="0" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#38bdae" font-size="14">TypeScript 96.2%</text>
+  </g>
+  <g transform="translate(170.0 92)">
+    <circle cx="5" cy="-4" r="5" fill="#663399"/>
+    <text x="16" y="0" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#38bdae" font-size="14">CSS 1.6%</text>
+  </g>
+  <g transform="translate(25.0 118)">
+    <circle cx="5" cy="-4" r="5" fill="#f1e05a"/>
+    <text x="16" y="0" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#38bdae" font-size="14">JavaScript 1.1%</text>
+  </g>
+  <g transform="translate(170.0 118)">
+    <circle cx="5" cy="-4" r="5" fill="#89e051"/>
+    <text x="16" y="0" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#38bdae" font-size="14">Shell 0.8%</text>
+  </g>
+  <g transform="translate(25.0 144)">
+    <circle cx="5" cy="-4" r="5" fill="#336790"/>
+    <text x="16" y="0" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#38bdae" font-size="14">PLpgSQL 0.2%</text>
+  </g>
+  <g transform="translate(170.0 144)">
+    <circle cx="5" cy="-4" r="5" fill="#e34c26"/>
+    <text x="16" y="0" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#38bdae" font-size="14">HTML 0.1%</text>
+  </g>
+</svg>
