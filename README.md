@@ -1,10 +1,10 @@
 # 👋 Hi, I'm Arthur Maeda (MaedaArthur)
 
-**Operations Director at [VendeAI](https://github.com/VendeAI)** from Florianópolis 🇧🇷 — I build
+**Customer Success coordinator at [VendeAI](https://github.com/VendeAI)** from Florianópolis 🇧🇷 — I build
 AI agents, support automation and internal tooling for the Brazilian payroll-deductible
 credit market.
 
-🎓 BSc Electrical Engineering at **UFSC** · 🇫🇷 Double degree at **CentraleSupélec** · 🛠️ Contributing to **[PET EEL UFSC](https://github.com/PET-EEL-UFSC)**
+🎓 BSc Electrical Engineering at **UFSC** · 🛠️ Contributing to **[PET EEL UFSC](https://github.com/PET-EEL-UFSC)**
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=MaedaArthur&label=Profile%20views&color=fe428e&style=flat" alt="Profile views" />
