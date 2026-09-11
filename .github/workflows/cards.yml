@@ -37,6 +37,8 @@ jobs:
           # CARDS_PAT com um PAT de escopo `repo`. Repare que isso guarda uma
           # credencial de leitura dos seus repos privados num repo publico.
           GITHUB_TOKEN: ${{ secrets.CARDS_PAT || secrets.GITHUB_TOKEN }}
+          # paletas disponiveis: radical, tokyonight
+          CARDS_THEME: radical
         run: python3 scripts/render_cards.py ${{ github.repository_owner }}
 
       - name: Commita se algo mudou

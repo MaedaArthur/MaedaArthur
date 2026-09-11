@@ -7,6 +7,7 @@ Sem dependencias externas: usa apenas a stdlib.
 Uso: GITHUB_TOKEN=... python3 scripts/render_cards.py [login]
 """
 
+import datetime
 import json
 import os
 import sys
@@ -16,23 +17,40 @@ from collections import OrderedDict
 
 API = "https://api.github.com/graphql"
 
-THEME = {
-    "bg": "#1a1b27",
-    "border": "#2a2e45",
-    "title": "#70a5fd",
-    "icon": "#bf91f3",
-    "text": "#38bdae",
-    "muted": "#8b93b8",
+# Paletas. Trocar de tema e so mudar CARDS_THEME no workflow.
+THEMES = {
+    "radical": {
+        "bg": "#141321",
+        "border": "#2b2640",
+        "title": "#fe428e",
+        "icon": "#f8d847",
+        "text": "#a9fef7",
+        "muted": "#7d7995",
+        "accent": "#fe428e",
+        "levels": ("#201c30", "#5c2246", "#962f63", "#d13b7f", "#fe428e"),
+    },
+    "tokyonight": {
+        "bg": "#1a1b27",
+        "border": "#2a2e45",
+        "title": "#70a5fd",
+        "icon": "#bf91f3",
+        "text": "#38bdae",
+        "muted": "#8b93b8",
+        "accent": "#70a5fd",
+        "levels": ("#232436", "#1f4b63", "#2a6f8f", "#3f9dc4", "#70cdf0"),
+    },
 }
 
-# Escala do calendario de contribuicoes (tokyonight).
-LEVELS = {
-    "NONE": "#232436",
-    "FIRST_QUARTILE": "#1f4b63",
-    "SECOND_QUARTILE": "#2a6f8f",
-    "THIRD_QUARTILE": "#3f9dc4",
-    "FOURTH_QUARTILE": "#70cdf0",
-}
+THEME = THEMES[os.environ.get("CARDS_THEME", "radical")]
+
+LEVEL_ORDER = (
+    "NONE",
+    "FIRST_QUARTILE",
+    "SECOND_QUARTILE",
+    "THIRD_QUARTILE",
+    "FOURTH_QUARTILE",
+)
+LEVELS = dict(zip(LEVEL_ORDER, THEME["levels"]))
 
 FONT = "'Segoe UI', Ubuntu, Sans-Serif"
 
@@ -121,6 +139,10 @@ def fetch(token, login):
     return user
 
 
+def fmt(n):
+    return "{:,}".format(n).replace(",", ".")
+
+
 def esc(text):
     return (
         str(text)
@@ -169,11 +191,11 @@ def stats_card(user, out):
             '    <text x="28" y="0" class="label">%s</text>\n'
             '    <text x="%d" y="0" class="value" text-anchor="end">%s</text>\n'
             '  </g>\n'
-            % (y, THEME["icon"], ICONS[icon], esc(label), width - 50, "{:,}".format(value).replace(",", "."))
+            % (y, THEME["icon"], ICONS[icon], esc(label), width - 50, fmt(value))
         )
     svg.append(
         '  <text x="25" y="%d" class="muted">%s contribuições no último ano</text>\n'
-        % (height - 14, "{:,}".format(contrib["contributionCalendar"]["totalContributions"]).replace(",", "."))
+        % (height - 14, fmt(contrib["contributionCalendar"]["totalContributions"]))
     )
     svg.append("</svg>\n")
     write(out, "".join(svg))
@@ -246,7 +268,7 @@ def calendar_card(user, out):
 
     svg = [card_open(width, height, "Contribuições no último ano")]
     svg.append('  <text x="%d" y="35" class="muted" text-anchor="end">%s contribuições</text>\n'
-               % (width - 25, "{:,}".format(cal["totalContributions"]).replace(",", ".")))
+               % (width - 25, fmt(cal["totalContributions"])))
 
     for i, label in enumerate(["seg", "qua", "sex"]):
         y = top + (1 + i * 2) * (cell + gap) + cell - 1
@@ -270,7 +292,7 @@ def calendar_card(user, out):
     legend_x = width - 25 - (5 * (cell + gap) + 82)
     legend_y = height - 16
     svg.append('  <text x="%d" y="%d" class="tiny">menos</text>\n' % (legend_x, legend_y))
-    for i, key in enumerate(["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"]):
+    for i, key in enumerate(LEVEL_ORDER):
         svg.append('  <rect x="%d" y="%d" width="%d" height="%d" rx="2" fill="%s"/>\n'
                    % (legend_x + 46 + i * (cell + gap), legend_y - 9, cell, cell, LEVELS[key]))
     svg.append('  <text x="%d" y="%d" class="tiny">mais</text>\n'
@@ -300,6 +322,120 @@ def inline_styles(svg):
     return svg
 
 
+
+def calendar_days(user):
+    """Dias do calendario em ordem, sem os dias futuros da ultima semana."""
+    weeks = user["contributionsCollection"]["contributionCalendar"]["weeks"]
+    days = [d for week in weeks for d in week["contributionDays"]]
+    days.sort(key=lambda d: d["date"])
+    hoje = datetime.date.today().isoformat()
+    return [d for d in days if d["date"] <= hoje]
+
+
+def streaks(days):
+    """Sequencia atual e maior sequencia dentro da janela do calendario.
+
+    O dia de hoje ainda pode receber contribuicao, entao ele nao quebra a
+    sequencia atual -- e a mesma convencao que o GitHub usa no perfil.
+    """
+    melhor = {"tamanho": 0, "inicio": None, "fim": None}
+    atual = {"tamanho": 0, "inicio": None, "fim": None}
+    corrida, inicio = 0, None
+    for dia in days:
+        if dia["contributionCount"] > 0:
+            corrida += 1
+            if corrida == 1:
+                inicio = dia["date"]
+            if corrida > melhor["tamanho"]:
+                melhor = {"tamanho": corrida, "inicio": inicio, "fim": dia["date"]}
+        else:
+            corrida, inicio = 0, None
+
+    for i in range(len(days) - 1, -1, -1):
+        if days[i]["contributionCount"] > 0:
+            fim = days[i]["date"]
+            j = i
+            while j >= 0 and days[j]["contributionCount"] > 0:
+                j -= 1
+            atual = {"tamanho": i - j, "inicio": days[j + 1]["date"], "fim": fim}
+            break
+        # so o proprio dia de hoje pode estar zerado sem quebrar
+        if i != len(days) - 1:
+            break
+    return atual, melhor
+
+
+MESES_CURTOS = ["jan", "fev", "mar", "abr", "mai", "jun",
+                "jul", "ago", "set", "out", "nov", "dez"]
+
+
+def data_curta(iso, com_ano=True):
+    if not iso:
+        return ""
+    ano, mes, dia = iso.split("-")
+    texto = "%d %s" % (int(dia), MESES_CURTOS[int(mes) - 1])
+    return texto + " " + ano if com_ano else texto
+
+
+def periodo(inicio, fim):
+    """Faixa legivel. So omite o ano do inicio quando ele e o mesmo do fim.
+
+    Omitir sempre esconderia que a janela de 12 meses comeca no ano anterior.
+    """
+    if not inicio:
+        return "-"
+    if inicio == fim:
+        return data_curta(inicio)
+    mesmo_ano = inicio[:4] == fim[:4]
+    return "%s - %s" % (data_curta(inicio, com_ano=not mesmo_ano), data_curta(fim))
+
+
+def streak_card(user, out):
+    days = calendar_days(user)
+    atual, melhor = streaks(days)
+    total = user["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+
+    width, height = 495, 195
+    col = width / 3.0
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" '
+           'viewBox="0 0 %d %d" fill="none" role="img" aria-label="Sequência de contribuições">\n'
+           '  <rect x="0.5" y="0.5" width="%d" height="%d" rx="6" fill="%s" stroke="%s"/>\n'
+           % (width, height, width, height, width - 1, height - 1, THEME["bg"], THEME["border"])]
+
+    colunas = [
+        ("%s" % fmt(total), "Contribuições no ano", periodo(days[0]["date"] if days else None,
+                                                            days[-1]["date"] if days else None)),
+        ("%s" % fmt(atual["tamanho"]), "Sequência atual", periodo(atual["inicio"], atual["fim"])),
+        ("%s" % fmt(melhor["tamanho"]), "Maior sequência", periodo(melhor["inicio"], melhor["fim"])),
+    ]
+
+    for i, (numero, rotulo, faixa) in enumerate(colunas):
+        cx = col * (i + 0.5)
+        destaque = THEME["accent"] if i == 1 else THEME["text"]
+        if i == 1:
+            svg.append('  <circle cx="%.1f" cy="72" r="46" fill="none" stroke="%s" stroke-width="4"/>\n'
+                       % (cx, THEME["accent"]))
+        svg.append('  <text x="%.1f" y="82" text-anchor="middle" font-family="%s" '
+                   'font-weight="700" font-size="34" fill="%s">%s</text>\n'
+                   % (cx, FONT, destaque, esc(numero)))
+        svg.append('  <text x="%.1f" y="134" text-anchor="middle" font-family="%s" '
+                   'font-weight="600" font-size="13" fill="%s">%s</text>\n'
+                   % (cx, FONT, THEME["title"], esc(rotulo)))
+        svg.append('  <text x="%.1f" y="154" text-anchor="middle" font-family="%s" '
+                   'font-weight="400" font-size="10" fill="%s">%s</text>\n'
+                   % (cx, FONT, THEME["muted"], esc(faixa)))
+
+    for i in (1, 2):
+        x = col * i
+        svg.append('  <line x1="%.1f" y1="40" x2="%.1f" y2="155" stroke="%s" stroke-width="1"/>\n'
+                   % (x, x, THEME["border"]))
+    svg.append('  <text x="%d" y="178" text-anchor="middle" font-family="%s" font-weight="400" '
+               'font-size="10" fill="%s">sequências contadas nos últimos 12 meses</text>\n'
+               % (width // 2, FONT, THEME["muted"]))
+    svg.append("</svg>\n")
+    write(out, "".join(svg))
+
+
 def write(path, content):
     content = inline_styles(content)
     directory = os.path.dirname(path)
@@ -322,6 +458,7 @@ def main():
     stats_card(user, "assets/stats.svg")
     langs_card(user, "assets/top-langs.svg")
     calendar_card(user, "assets/contributions.svg")
+    streak_card(user, "assets/streak.svg")
 
 
 if __name__ == "__main__":

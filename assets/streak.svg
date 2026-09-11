@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" fill="none" role="img" aria-label="Sequência de contribuições">
+  <rect x="0.5" y="0.5" width="494" height="194" rx="6" fill="#141321" stroke="#2b2640"/>
+  <text x="82.5" y="82" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="700" font-size="34" fill="#a9fef7">239</text>
+  <text x="82.5" y="134" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" font-size="13" fill="#fe428e">Contribuições no ano</text>
+  <text x="82.5" y="154" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" font-size="10" fill="#7d7995">7 set 2025 - 11 set 2026</text>
+  <circle cx="247.5" cy="72" r="46" fill="none" stroke="#fe428e" stroke-width="4"/>
+  <text x="247.5" y="82" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="700" font-size="34" fill="#fe428e">1</text>
+  <text x="247.5" y="134" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" font-size="13" fill="#fe428e">Sequência atual</text>
+  <text x="247.5" y="154" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" font-size="10" fill="#7d7995">11 set 2026</text>
+  <text x="412.5" y="82" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="700" font-size="34" fill="#a9fef7">4</text>
+  <text x="412.5" y="134" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" font-size="13" fill="#fe428e">Maior sequência</text>
+  <text x="412.5" y="154" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" font-size="10" fill="#7d7995">20 mar - 23 mar 2026</text>
+  <line x1="165.0" y1="40" x2="165.0" y2="155" stroke="#2b2640" stroke-width="1"/>
+  <line x1="330.0" y1="40" x2="330.0" y2="155" stroke="#2b2640" stroke-width="1"/>
+  <text x="247" y="178" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" font-size="10" fill="#7d7995">sequências contadas nos últimos 12 meses</text>
+</svg>
