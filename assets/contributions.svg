@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="806" height="198" viewBox="0 0 806 198" fill="none" role="img" aria-label="Public Contributions in the last year">
   <rect x="0.5" y="0.5" width="805" height="197" rx="6" fill="#141321" stroke="#2b2640"/>
   <text x="25" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="600" fill="#fe428e" font-size="18">Public Contributions in the last year</text>
-  <text x="781" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="12" text-anchor="end">240 public contributions</text>
+  <text x="781" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="12" text-anchor="end">241 public contributions</text>
   <text x="25" y="94" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">Mon</text>
   <text x="25" y="122" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">Wed</text>
   <text x="25" y="150" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10" text-anchor="end">Fri</text>
@@ -379,9 +379,10 @@
   <rect x="756" y="98" width="11" height="11" rx="2" fill="#201c30"><title>2026-09-29: 0</title></rect>
   <rect x="756" y="112" width="11" height="11" rx="2" fill="#201c30"><title>2026-09-30: 0</title></rect>
   <rect x="756" y="126" width="11" height="11" rx="2" fill="#201c30"><title>2026-10-01: 0</title></rect>
-  <rect x="756" y="140" width="11" height="11" rx="2" fill="#201c30"><title>2026-10-02: 0</title></rect>
+  <rect x="756" y="140" width="11" height="11" rx="2" fill="#5c2246"><title>2026-10-02: 1</title></rect>
   <rect x="756" y="154" width="11" height="11" rx="2" fill="#201c30"><title>2026-10-03: 0</title></rect>
   <rect x="770" y="70" width="11" height="11" rx="2" fill="#201c30"><title>2026-10-04: 0</title></rect>
+  <rect x="770" y="84" width="11" height="11" rx="2" fill="#201c30"><title>2026-10-05: 0</title></rect>
   <text x="629" y="182" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="400" fill="#7d7995" font-size="10">less</text>
   <rect x="675" y="173" width="11" height="11" rx="2" fill="#201c30"/>
   <rect x="689" y="173" width="11" height="11" rx="2" fill="#5c2246"/>
